@@ -6,8 +6,11 @@
     <div class="panel-body">
       <ul>
         <li><strong>Nome:</strong> <%= current_user.name %></li>
-        <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
-        <li><strong>Perfil URL:</strong> <%= current_user.url %></li>
+        <li><strong>Email:</strong> <%= current_user.email %></li>
+        <li><strong>Data de nascimento:</strong></li>
+        <li><strong>Cidade natal:</strong></li>
+        <li><strong>Morando atualmente em:</strong></li>
+        <li><strong>Perfil:</strong> <a href="<%= current_user.url %>" target="_blank"> Clique aqui </li>
       </ul>
     </div>
   </div>
