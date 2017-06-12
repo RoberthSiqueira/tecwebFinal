@@ -1,38 +1,46 @@
-<% if current_user %>
-  <div class="page-header">
-    <h1>Algumas informações sobre você...</h1>
-  </div>
-  <%= form_for(current_user, url: update_path(current_user), method: :put) do |f| %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-          <ul>
-            <li>
-              <%= f.label :name, "Nome" %>
-              <%= f.text_field :name %>
-            </li>
-            <li>
-              <%= f.label :email, "Email" %>
-              <%= f.text_field :email, {type:"email"} %>
-            </li>
-            <li>
-              <%= f.label :age, "Data de nascimento" %>
-              <%= f.text_field :age, {type:"date"} %>
-            </li>
-            <li>
-              <%= f.label :location, "Cidade atual" %>
-              <%= f.text_field :location %>
-            </li>
-            <li>
-              <%= f.label :url, "Perfil" %>
-              <%= link_to "Clique aqui", current_user.url, {target:"_blank"} %>
-          </ul>
+<div class="row">
+  <div class="Container">
+    <% if current_user %>
+      <div class="page-header">
+        <h1>Algumas informações sobre você...</h1>
       </div>
-    </div>
-    <%= f.submit 'Salvar', {class:"btn btn-success"} %>
-  <% end %>
-<% else %>
-  	<div class="jumbotron">
-	  <h1>Bem vindo!</h1>
-	  <p>Autentique com o Facebook para continuar.</p>
-	</div>
-<% end %>
+      <%= form_for(current_user, url: update_path(current_user), method: :put) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <ul>
+                <li>
+                  <%= f.label :name, "Nome" %>
+                  <%= f.text_field :name %>
+                </li>
+                <li>
+                  <%= f.label :email, "Email" %>
+                  <%= f.text_field :email, {type:"email"} %>
+                </li>
+                <li>
+                  <%= f.label :age, "Data de nascimento" %>
+                  <%= f.text_field :age, {type:"date"} %>
+                </li>
+                <li>
+                  <%= f.label :location, "Cidade atual" %>
+                  <%= f.text_field :location %>
+                </li>
+                <li>
+                  <%= f.label :url, "Perfil" %>
+                  <%= link_to "Clique aqui", current_user.url, {target:"_blank"} %>
+              </ul>
+          </div>
+        </div>
+        <%= f.submit 'Salvar', {class:"btn btn-success"} %>
+      <% end %>
+    <% else %>
+        <div class="jumbotron">
+        <h1>Bem vindo!</h1>
+        <p>Autentique com o Facebook para continuar.</p>
+        <a href="/auth/facebook" class="btn btn-social btn-facebook">
+          <span class="fa fa-facebook"></span>
+          Entrar com facebook
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

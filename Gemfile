@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
